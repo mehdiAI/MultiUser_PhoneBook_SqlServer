@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  mssql:
+    container_name: mssql_2
+    user: root
+    hostname: mssql
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - 1433:1433
+    volumes:
+      - ./data:/var/opt/mssql/data
+      #- ./sqlsystem:/var/opt/mssql/  # on windows does not support
+      - ./sqllog:/var/opt/mssql/log
+      - ./sqlbackup:/var/opt/sqlserver/backup
+      - ./secrets:/var/opt/mssql/secrets
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=7202@fasa
