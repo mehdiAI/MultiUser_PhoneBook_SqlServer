@@ -1,0 +1,26 @@
+in ubuntu 21.10   . 14001210
+
+first attept to install unixodbc-dev and all dependencies.    ( odbcinst1debian2 ,  libodbc1  ).
+python package pyodbc==4.0.32 need "unixodbc-dev".
+
+then:
+
+
+In this url: " https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15#17   "
+
+################
+
+
+sudo su
+curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+
+curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list > /etc/apt/sources.list.d/mssql-release.list
+
+exit
+sudo apt-get update
+sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17
+# optional: for bcp and sqlcmd
+sudo ACCEPT_EULA=Y apt-get install -y mssql-tools
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+
+################

@@ -1,0 +1,1 @@
+RESTORE DATABASE pufi FROM DISK = '/var/opt/mssql/data/pufi-14001210.bak'

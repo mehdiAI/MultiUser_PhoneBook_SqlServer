@@ -1,0 +1,14 @@
+
+This version of pygt5 dont work good with wayland in ubuntu(20.04 or 21.10) then disable it by editing
+     "/etc/gdm3/custom.conf" to uncomment  "WaylandEnable=Flase".
+rewuirmentsV2 {
+numpy==1.22.2
+pandas==1.4.1
+pyodbc==4.0.32
+PyQt5==5.15.6
+PyQt5-Qt5==5.15.2
+PyQt5-sip==12.9.1
+python-dateutil==2.8.2
+pytz==2021.3
+six==1.16.0
+}
